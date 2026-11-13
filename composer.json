@@ -1,0 +1,82 @@
+{
+    "name": "nowo-tech/migrations-kit-contracts",
+    "description": "Contracts a bundle implements to declare its identity and access-key columns, so a host can assert they are in a binary NO PAD collation (REQ-SEC-006). Interfaces and value objects only, no dependencies beyond PHP.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "contracts",
+        "collation",
+        "no-pad",
+        "utf8mb4",
+        "identity",
+        "mysql",
+        "mariadb",
+        "database",
+        "security"
+    ],
+    "homepage": "https://github.com/nowo-tech/MigrationsKitContracts",
+    "support": {
+        "issues": "https://github.com/nowo-tech/MigrationsKitContracts/issues",
+        "source": "https://github.com/nowo-tech/MigrationsKitContracts"
+    },
+    "authors": [
+        {
+            "name": "Héctor Franco Aceituno",
+            "email": "hectorfranco@nowo.tech",
+            "homepage": "https://github.com/HecFranco",
+            "role": "Developer"
+        },
+        {
+            "name": "Nowo.tech",
+            "homepage": "https://nowo.tech"
+        }
+    ],
+    "require": {
+        "php": ">=8.2 <8.6"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "phpstan/phpstan": "^2.0",
+        "phpstan/phpstan-phpunit": "^2.0",
+        "phpunit/phpunit": "^10.0 || ^11.0",
+        "rector/rector": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nowo\\MigrationsKitContracts\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Nowo\\MigrationsKitContracts\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "platform": {
+            "php": "8.2.0"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "scripts": {
+        "test": "vendor/bin/phpunit --color=always",
+        "cs-check": "vendor/bin/php-cs-fixer fix --dry-run --diff",
+        "cs-fix": "vendor/bin/php-cs-fixer fix",
+        "phpstan": "phpstan analyse --memory-limit=512M",
+        "rector-dry": "rector process --dry-run --no-progress-bar",
+        "qa": [
+            "@cs-check",
+            "@phpstan",
+            "@test"
+        ]
+    },
+    "scripts-descriptions": {
+        "test": "Run PHPUnit tests",
+        "cs-check": "Check code style with PHP-CS-Fixer",
+        "cs-fix": "Fix code style with PHP-CS-Fixer",
+        "phpstan": "Run PHPStan static analysis",
+        "rector-dry": "Run Rector in dry-run mode",
+        "qa": "Run all quality assurance checks"
+    }
+}

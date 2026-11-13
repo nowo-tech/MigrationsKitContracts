@@ -1,0 +1,8 @@
+# PHPStan configuration for Migrations Kit Contracts (PHP 8.2+, no framework).
+
+parameters:
+    level: 8
+    paths:
+        - src
+        - tests
+    reportUnmatchedIgnoredErrors: false
