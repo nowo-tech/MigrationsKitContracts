@@ -87,7 +87,10 @@ Three rules that matter:
 
 ## Documentation
 
-- [CHANGELOG](docs/CHANGELOG.md)
+- [Changelog](docs/CHANGELOG.md)
+- [Contributing](docs/CONTRIBUTING.md)
+- [Security](docs/SECURITY.md)
+- [Code of Conduct](CODE_OF_CONDUCT.md)
 
 ## License
 

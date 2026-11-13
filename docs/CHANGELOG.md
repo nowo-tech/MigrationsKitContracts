@@ -29,3 +29,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
   The check that consumes the declarations is `nowo:migrations:check-key-collations` in
   `nowo-tech/migrations-kit-bundle` 2.5.0.
+
+### Documentation
+
+- `README`, `docs/CONTRIBUTING.md`, `docs/SECURITY.md` and `CODE_OF_CONDUCT.md` (REQ-DOCS-003). CONTRIBUTING states
+  the backward-compatibility rules that matter for a contracts package: adding a method to the interface, or a
+  required constructor argument to the value object, is a major change.
