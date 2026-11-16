@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e1cdb44d1908d10c12520bd0046c78d2",
+    "content-hash": "46818c4bcc750047b91d908a1a4d2f5d",
     "packages": [],
     "packages-dev": [
         {
@@ -581,6 +581,57 @@
             "published-time": "2026-11-09T14:32:30+00:00"
         },
         {
+            "name": "igor-php/igor-php",
+            "version": "v0.10.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/igor-php/igor-php.git",
+                "reference": "a4f9153de9bae1e746a34dfb571462bcda6f4235"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/igor-php/igor-php/zipball/a4f9153de9bae1e746a34dfb571462bcda6f4235",
+                "reference": "a4f9153de9bae1e746a34dfb571462bcda6f4235",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "bin": [
+                "bin/igor-php"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "IgorPhp\\IgorBundle\\": "src/php/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kevin MARTINS",
+                    "email": "kevin.martins@me.com"
+                }
+            ],
+            "description": "The faithful assistant for your FrankenPHP Workers.",
+            "keywords": [
+                "frankenphp",
+                "linter",
+                "static-analysis",
+                "symfony",
+                "worker"
+            ],
+            "support": {
+                "issues": "https://github.com/igor-php/igor-php/issues",
+                "source": "https://github.com/igor-php/igor-php/tree/v0.10.1"
+            },
+            "time": "2026-10-02T23:10:19+00:00",
+            "published-time": "2026-10-02T23:16:11+00:00"
+        },
+        {
             "name": "myclabs/deep-copy",
             "version": "1.14.0",
             "source": {
@@ -698,6 +749,97 @@
             },
             "time": "2026-09-13T18:51:52+00:00",
             "published-time": "2026-09-13T18:53:16+00:00"
+        },
+        {
+            "name": "nowo-tech/phpstan-frankenphp",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nowo-tech/PhpStanFrankenPhp.git",
+                "reference": "18f1248fee12f6ed427536ac6885f0d6aaf2091a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nowo-tech/PhpStanFrankenPhp/zipball/18f1248fee12f6ed427536ac6885f0d6aaf2091a",
+                "reference": "18f1248fee12f6ed427536ac6885f0d6aaf2091a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2 <8.6",
+                "phpstan/phpstan": "^2.1.26"
+            },
+            "require-dev": {
+                "doctrine/dbal": "^4.2",
+                "doctrine/orm": "^3.3",
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "igor-php/igor-php": "^0.10.0",
+                "phpstan/phpstan-phpunit": "^2.0",
+                "phpstan/phpstan-strict-rules": "^2.0",
+                "phpunit/phpunit": "^10.0 || ^11.0",
+                "rector/rector": "^2.0",
+                "symfony/console": "^6.4 || ^7.0 || ^8.0",
+                "symfony/http-foundation": "^6.4 || ^7.0 || ^8.0",
+                "symfony/process": "^6.4 || ^7.0 || ^8.0",
+                "symfony/service-contracts": "^2.5 || ^3.0"
+            },
+            "type": "phpstan-extension",
+            "extra": {
+                "phpstan": {
+                    "includes": [
+                        "extension.neon"
+                    ]
+                },
+                "branch-alias": {
+                    "dev-main": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "NowoTech\\PhpStanFrankenPhp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Héctor Franco Aceituno",
+                    "email": "hectorfranco@nowo.tech",
+                    "homepage": "https://github.com/HecFranco",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Nowo.tech",
+                    "homepage": "https://nowo.tech"
+                }
+            ],
+            "description": "PHPStan rules that help you migrate from PHP-FPM to FrankenPHP classic, then to worker mode. Rules are split by level with demos for every case.",
+            "homepage": "https://github.com/nowo-tech/PhpStanFrankenPhp",
+            "keywords": [
+                "PHPStan",
+                "code-quality",
+                "frankenphp",
+                "laravel",
+                "long-running",
+                "migration",
+                "php-fpm",
+                "static-analysis",
+                "symfony",
+                "worker"
+            ],
+            "support": {
+                "issues": "https://github.com/nowo-tech/PhpStanFrankenPhp/issues",
+                "source": "https://github.com/nowo-tech/PhpStanFrankenPhp"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/HecFranco",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-11-15T02:26:27+00:00",
+            "published-time": "2026-11-15T02:27:38+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -818,6 +960,55 @@
             },
             "time": "2022-02-21T01:04:05+00:00",
             "published-time": "2022-02-21T01:04:30+00:00"
+        },
+        {
+            "name": "phpstan/extension-installer",
+            "version": "1.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/extension-installer.git",
+                "reference": "85e90b3942d06b2326fba0403ec24fe912372936"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/extension-installer/zipball/85e90b3942d06b2326fba0403ec24fe912372936",
+                "reference": "85e90b3942d06b2326fba0403ec24fe912372936",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^2.0",
+                "php": "^7.2 || ^8.0",
+                "phpstan/phpstan": "^1.9.0 || ^2.0"
+            },
+            "require-dev": {
+                "composer/composer": "^2.0",
+                "php-parallel-lint/php-parallel-lint": "^1.2.0",
+                "phpstan/phpstan-strict-rules": "^0.11 || ^0.12 || ^1.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "PHPStan\\ExtensionInstaller\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "PHPStan\\ExtensionInstaller\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Composer plugin for automatic installation of PHPStan extensions",
+            "keywords": [
+                "dev",
+                "static analysis"
+            ],
+            "support": {
+                "issues": "https://github.com/phpstan/extension-installer/issues",
+                "source": "https://github.com/phpstan/extension-installer/tree/1.4.3"
+            },
+            "time": "2024-09-04T20:21:43+00:00",
+            "published-time": "2024-09-04T20:22:27+00:00"
         },
         {
             "name": "phpstan/phpstan",

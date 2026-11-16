@@ -12,6 +12,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- No change under `src/`: repository tooling and documentation aligned with the nowo-tech package requirements
+  (REQ compliance sweep 2026-11-16).
+- Development: Docker image + `docker-compose.yml`, root `Makefile` (`release-check`, `setup-hooks`, `igor`, …),
+  git hooks; PHPStan now includes the `nowo-tech/phpstan-frankenphp` classic and worker rulesets; Igor worker-state
+  audit; CI adds a 100% line / method coverage gate on PHP 8.2, Rector, Igor, `composer audit` and a git-history
+  check; unit tests moved to `tests/Unit/`.
+- `composer.json`: `archive.exclude`, `support.docs`.
+
+### Documentation
+
+- `docs/INSTALLATION.md`, `CONFIGURATION.md`, `USAGE.md`, `UPGRADING.md`, `RELEASE.md`, `ENGRAM.md`, `PSR.md`,
+  `SPEC-DRIVEN-DEVELOPMENT.md`, `SPEC-KIT.md`; GitHub Spec Kit baseline (`specs/001-baseline/`, 4/4 files mapped);
+  release security checklist (12.4.1) in `SECURITY.md`; canonical README (badges, documentation list, tests and
+  coverage).
+- `.github/`: issue / pull request templates, `CODEOWNERS`, `SECURITY.md`, Copilot instructions, Dependabot,
+  release, release-sync, PR-title lint and stale workflows. `.cursor/` rules and Engram MCP config.
+
 ## [1.0.0] - 2026-11-13
 
 ### Added

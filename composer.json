@@ -17,7 +17,8 @@
     "homepage": "https://github.com/nowo-tech/MigrationsKitContracts",
     "support": {
         "issues": "https://github.com/nowo-tech/MigrationsKitContracts/issues",
-        "source": "https://github.com/nowo-tech/MigrationsKitContracts"
+        "source": "https://github.com/nowo-tech/MigrationsKitContracts",
+        "docs": "https://github.com/nowo-tech/MigrationsKitContracts#documentation"
     },
     "authors": [
         {
@@ -36,6 +37,9 @@
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",
+        "igor-php/igor-php": "^0.10.0",
+        "nowo-tech/phpstan-frankenphp": "^1.0",
+        "phpstan/extension-installer": "^1.4",
         "phpstan/phpstan": "^2.0",
         "phpstan/phpstan-phpunit": "^2.0",
         "phpunit/phpunit": "^10.0 || ^11.0",
@@ -52,6 +56,9 @@
         }
     },
     "config": {
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        },
         "sort-packages": true,
         "platform": {
             "php": "8.2.0"
@@ -65,6 +72,9 @@
         "cs-fix": "vendor/bin/php-cs-fixer fix",
         "phpstan": "phpstan analyse --memory-limit=512M",
         "rector-dry": "rector process --dry-run --no-progress-bar",
+        "test-coverage": "XDEBUG_MODE=coverage vendor/bin/phpunit --colors=always --coverage-text --coverage-clover coverage.xml",
+        "rector": "rector process --no-progress-bar",
+        "igor": "igor-php --no-agent .",
         "qa": [
             "@cs-check",
             "@phpstan",
@@ -77,6 +87,27 @@
         "cs-fix": "Fix code style with PHP-CS-Fixer",
         "phpstan": "Run PHPStan static analysis",
         "rector-dry": "Run Rector in dry-run mode",
+        "test-coverage": "Run PHPUnit with code coverage (text + Clover)",
+        "rector": "Apply Rector refactoring",
+        "igor": "Run Igor FrankenPHP worker-state audit (REQ-CS-008)",
         "qa": "Run all quality assurance checks"
+    },
+    "archive": {
+        "exclude": [
+            "/demo",
+            "/.cursor",
+            "/.specify",
+            "/specs",
+            "/tests",
+            "/.github",
+            "/.githooks",
+            "/.scripts",
+            "/Dockerfile",
+            "/docker-compose.yml",
+            "/Makefile",
+            "/igor.json",
+            "/.editorconfig",
+            "/.cursorignore"
+        ]
     }
 }

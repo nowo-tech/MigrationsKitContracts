@@ -1,0 +1,20 @@
+---
+description: PHP library rules (no Symfony dependency)
+globs:
+  - "src/**/*.php"
+alwaysApply: false
+---
+
+Target the declared range by default: PHP >=8.2 <8.6. This library has no Symfony dependency; do not add one.
+
+Prefer:
+- modern PHP with strict typing and explicit return types
+- PSR-12 coding style
+- final (and readonly where possible) classes
+- small focused classes; no static or cross-request state (FrankenPHP worker mode, kernel reset off)
+- preserving public API: every public class and method is a contract for independently released packages
+- PHPDoc in English for non-trivial classes, methods, and complex behavior
+
+Do not introduce BC breaks unless explicitly requested.
+Do not add PHPDoc in Spanish.
+Do not touch unrelated namespaces or files.

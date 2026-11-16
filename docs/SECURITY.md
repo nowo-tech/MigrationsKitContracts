@@ -9,6 +9,7 @@ Security posture of `nowo-tech/migrations-kit-contracts`.
 - [Attack surface](#attack-surface)
 - [What the contracts are for](#what-the-contracts-are-for)
 - [Dependencies and update policy](#dependencies-and-update-policy)
+- [Release security checklist (12.4.1)](#release-security-checklist-1241)
 
 ## Scope
 
@@ -49,4 +50,22 @@ protected by this mechanism — declaring a column is what forces the collation 
 `require` is `php: >=8.2 <8.6` and nothing else, so there is no third-party supply chain to track. Development
 tooling (PHPUnit, PHPStan, PHP-CS-Fixer, Rector) is `require-dev` and never ships: `.gitattributes` marks
 `tests/`, `.github/` and every tooling config `export-ignore`, so the distributed archive contains only `src/`,
-`LICENSE`, `README.md`, `composer.json` and `docs/CHANGELOG.md`.
+`LICENSE`, `README.md`, `composer.json` and the integrator documents under `docs/`.
+
+## Release security checklist (12.4.1)
+
+Confirm each item before tagging (a note in the release PR is enough).
+
+| Item | Status for this package |
+|------|-------------------------|
+| `docs/SECURITY.md` and `.github/SECURITY.md` current | This file + the GitHub policy template |
+| `.env` ignored | `.gitignore` ignores `.env`, `.env.local`, `.env.*.local`; the package reads no environment |
+| No secrets in the repository | No credentials, keys or tokens; nothing to configure |
+| Safe recipe / configuration | No Flex recipe, no configuration |
+| Input / output | Constructor rejects empty `table` / `column` / `owner`; no output rendering, no SQL built here |
+| Dependencies | `require` is PHP only; CI runs `composer audit` |
+| Logs | Nothing is logged |
+| Cryptography | Not applicable |
+| Permissions / exposure | No services, routes, commands or files |
+| Limits / DoS | No loops over untrusted input; `ExactKeyColumns` holds what the declaring package passes |
+| AI security audit (REQ-SEC-004) | Recorded in `BUNDLES_SECURITY_ANALYSIS.md` of the nowo-tech bundles workspace before the next release |

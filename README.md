@@ -1,7 +1,8 @@
 # Migrations Kit Contracts
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![PHP](https://img.shields.io/badge/php-%3E%3D8.2-777bb3.svg)](https://www.php.net/)
+[![CI](https://github.com/nowo-tech/MigrationsKitContracts/actions/workflows/ci.yml/badge.svg)](https://github.com/nowo-tech/MigrationsKitContracts/actions/workflows/ci.yml) [![Packagist Version](https://img.shields.io/packagist/v/nowo-tech/migrations-kit-contracts.svg?style=flat)](https://packagist.org/packages/nowo-tech/migrations-kit-contracts) [![Packagist Downloads](https://img.shields.io/packagist/dt/nowo-tech/migrations-kit-contracts.svg)](https://packagist.org/packages/nowo-tech/migrations-kit-contracts) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![PHP](https://img.shields.io/badge/PHP-8.2%2B-777BB4?logo=php)](https://php.net) [![GitHub stars](https://img.shields.io/github/stars/nowo-tech/MigrationsKitContracts.svg?style=social&label=Star)](https://github.com/nowo-tech/MigrationsKitContracts) [![Coverage](https://img.shields.io/badge/Coverage-100%25-brightgreen)](#tests-and-coverage)
+
+> ⭐ **Found this useful?** Install from [Packagist](https://packagist.org/packages/nowo-tech/migrations-kit-contracts) and give the repo a [star on GitHub](https://github.com/nowo-tech/MigrationsKitContracts) if it helps you.
 
 Contracts a package implements to **declare its identity and access-key columns**, so that a host can assert they
 are in a binary **NO PAD** collation (REQ-SEC-006). Interfaces and value objects only — **no dependencies beyond
@@ -11,6 +12,18 @@ The check that consumes these declarations ships in
 [`nowo-tech/migrations-kit-bundle`](https://github.com/nowo-tech/MigrationsKitBundle) as
 `nowo:migrations:check-key-collations`. A declaring bundle requires **this** package; only the host (or the
 bundle's own test suite) needs the bundle.
+
+![FrankenPHP Friendly Worker Mode](docs/images/frankenphp-friendly.png)
+
+This bundle is **FrankenPHP worker mode friendly**.
+
+## Installation
+
+```bash
+composer require nowo-tech/migrations-kit-contracts
+```
+
+PHP 8.2 to 8.5, no other dependency. Details: [Installation](docs/INSTALLATION.md).
 
 ## Why a positive list
 
@@ -29,12 +42,6 @@ trailing spaces, so two different users can own the same identity key.
 Scanning for "bad" collations only finds columns somebody already wrote a collation for. **A column nobody ever
 thought about produces no hit at all** — which is exactly the dangerous case. So the list is positive: a column is
 checked once a package declares it, and declaring it is what forces the collation decision.
-
-## Installation
-
-```bash
-composer require nowo-tech/migrations-kit-contracts
-```
 
 ## Declaring columns
 
@@ -87,10 +94,30 @@ Three rules that matter:
 
 ## Documentation
 
-- [Changelog](docs/CHANGELOG.md)
+- [Installation](docs/INSTALLATION.md)
+- [Configuration](docs/CONFIGURATION.md)
+- [Usage](docs/USAGE.md)
 - [Contributing](docs/CONTRIBUTING.md)
-- [Security](docs/SECURITY.md)
 - [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Changelog](docs/CHANGELOG.md)
+- [Upgrading](docs/UPGRADING.md)
+- [Release](docs/RELEASE.md)
+- [Security](docs/SECURITY.md)
+- [Engram](docs/ENGRAM.md)
+- [Spec-driven development](docs/SPEC-DRIVEN-DEVELOPMENT.md)
+- [GitHub Spec Kit](docs/SPEC-KIT.md)
+
+### Additional documentation
+
+- [PSR evaluation (REQ-CS-007)](docs/PSR.md)
+
+## Tests and coverage
+
+- **Tests:** PHPUnit (`tests/Unit`); no integration tests (the package has no I/O).
+- **PHP (lines):** **100%** of `src/` (CI gate: 100% lines and methods on PHP 8.2; locally `make test-coverage`
+  prints **Global PHP coverage (Lines)**).
+- **TS/JS:** N/A
+- **Python:** N/A
 
 ## License
 
