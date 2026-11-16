@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Nowo\MigrationsKitContracts\Tests\Collation;
+namespace Nowo\MigrationsKitContracts\Tests\Unit\Collation;
 
 use InvalidArgumentException;
 use Nowo\MigrationsKitContracts\Collation\ExactKeyColumn;
@@ -58,8 +58,10 @@ final class ExactKeyColumnTest extends TestCase
         $second = new ExactKeyColumn('c', 'd', 'o');
         $list   = new ExactKeyColumns($first, $second);
 
-        self::assertInstanceOf(ExactKeyColumnsInterface::class, $list);
-        self::assertSame([$first, $second], $list->exactKeyColumns());
+        // Read through the port type: ExactKeyColumns must be usable wherever the interface is expected.
+        $read = static fn (ExactKeyColumnsInterface $declaration): array => $declaration->exactKeyColumns();
+
+        self::assertSame([$first, $second], $read($list));
         self::assertSame([], (new ExactKeyColumns())->exactKeyColumns());
     }
 

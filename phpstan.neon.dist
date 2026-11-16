@@ -1,8 +1,15 @@
-# PHPStan configuration for Migrations Kit Contracts (PHP 8.2+, no framework).
+# PHPStan configuration (PHP 8.2+, no framework). Level 8, no ignored errors (REQ-CS-006);
+# FrankenPHP classic + worker rulesets (REQ-CS-005).
+
+includes:
+    - vendor/nowo-tech/phpstan-frankenphp/ruleset-classic.neon
+    - vendor/nowo-tech/phpstan-frankenphp/ruleset-worker.neon
 
 parameters:
     level: 8
     paths:
         - src
         - tests
-    reportUnmatchedIgnoredErrors: false
+    excludePaths:
+        - vendor
+    ignoreErrors: []

@@ -1,0 +1,8 @@
+# CODEOWNERS for MigrationsKitContracts
+* @HecFranco
+
+/.github/ @HecFranco
+
+/src/ @HecFranco
+
+/tests/ @HecFranco
